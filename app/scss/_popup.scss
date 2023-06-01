@@ -1,0 +1,143 @@
+.popup {
+	position: fixed;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+
+	display: flex;
+	align-items: center;
+
+	padding: 10px;
+
+	z-index: 100;
+
+	opacity: 0; visibility: hidden;
+	transition: opacity .4s ease, visibility .4s ease;
+
+	perspective: 400px;
+
+	&._transition-none {
+		transition: none;
+	}
+
+	&._transition-none &-body {
+		transition: none;
+	}
+
+	&._active._transition-none &-body {
+		transition: none;
+	}
+
+	will-change: opacity, visibility;
+
+	&._active {
+		opacity: 1; visibility: visible;
+	}
+
+	/* &._active &-body {
+		transform: translate3d(0,0,0);
+		transition: transform .2s ease;
+	} */
+
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		min-height: 100%; width: 100%;
+
+		z-index: 2;
+	}
+	&-bg {
+		position: absolute;
+		left: 0; top: 0;
+		width: 100%; height: 100%;
+
+		background: rgba(0, 0, 0, 0.71);
+
+	}
+	&-body {
+		margin: auto;
+		position: relative;
+		background: var(--white);
+		
+		overflow-y: auto;
+		max-height: calc((var(--vh) * 100) - 30px);
+		max-width: 500px;
+		width: 100%;
+
+		padding: 15px;
+		@media(min-width: 500px) {
+			padding: 30px;
+		}
+		border-radius: 14px;
+
+		z-index: 2;
+	}
+	&-close-btn {
+		position: absolute;
+		right: 15px; top: 15px;
+		line-height: 100%;
+		width: 40px; height: 40px;
+	  
+		& svg {
+		  width: 50%;
+		}
+
+		background: transparent;
+	}
+}
+
+.product-share {
+
+	// .product-share__wrapper
+
+	&__wrapper {
+	}
+
+	// .product-share__bg
+
+	&__bg {
+	}
+
+	// .product-share__body
+
+	&__body {
+		text-align: center;
+	}
+
+	// .product-share__close-btn
+
+	&__close-btn {
+	}
+
+	// .product-share__title
+
+	&__title {
+		margin-top: 40px;
+	}
+
+	// .product-share__list
+
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		margin-top: 20px; margin-bottom: 30px;
+
+		a {
+			display: block;
+			padding: 15px;
+
+			transition: opacity .3s ease;
+			&:hover {
+				opacity: .8;
+			}
+			
+			&:active {
+				opacity: .6;
+			}
+		}
+	}
+}
+

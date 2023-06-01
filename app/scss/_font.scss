@@ -1,0 +1,56 @@
+
+@font-face {
+	@include font-include('Inter', 400, swap, normal, 'Inter-Regular');
+}
+
+@font-face {
+	@include font-include('Inter', 500, swap, normal, 'Inter-Medium');
+}
+
+@font-face {
+	@include font-include('Inter', 600, swap, normal, 'Inter-SemiBold');
+}
+
+
+
+.main-title {
+	font-family: var(--title-font);
+	font-weight: 700;
+	line-height: 115%;
+
+	font-size: 1.875rem;
+
+	@include _768 {
+		font-size: 2.5rem;
+	}
+
+	@include _992 {
+		font-size: 3.125rem;
+	}
+}
+
+.title {
+	
+	font-family: var(--title-font);
+	font-weight: 500;
+	line-height: 115%;
+
+	font-size: 2rem; // 32px
+	&._min {
+		font-size: 1.125rem; // 18px
+		text-transform: uppercase;
+	}
+
+	@include _768 {
+		font-size: 2.5rem; // 40px
+		&._min {
+			font-size: 1.5rem; // 24px
+		}
+	}
+
+}
+
+
+.txt-center {
+	text-align: center;
+}
